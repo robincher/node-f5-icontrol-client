@@ -1,0 +1,35 @@
+{
+  "name": "node-icontrol-client",
+  "description": "F5 iControl REST API client",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "keywords": [
+    "node",
+    "f5",
+    "iControl"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "test": "BLUEBIRD_DEBUG=1 mocha --opts ./spec/support/mocha.opts $(find ./spec/ -name '*Spec.js')",
+    "testCoverage": "nyc --reporter=lcovonly npm test"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2",
+    "lodash": "^4.17.5",
+    "fs": "0.0.1-security"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.0.4",
+    "nyc": "^11.6.0",
+    "sinon": "^4.4.5"
+  }
+}
