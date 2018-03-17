@@ -1,0 +1,10 @@
+{
+  "test": {
+    "ca" : "./config/certificate/some-bundle.crt",
+    "host": "",
+    "proto": "",
+    "port": 443,
+    "token": "132121"
+  }
+
+}
