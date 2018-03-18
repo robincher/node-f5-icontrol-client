@@ -1,7 +1,7 @@
+'use strict';
 const sinon = require('sinon');
 const IControlUtil = require('../../lib/IControlUtil');
 const IControlUtilSpecStub = require('../stub/IControlUtilSpecStub.json');
-
 
 describe('iControl REST API Client Test Spec - Normal Cases',  () => {
 

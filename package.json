@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "directories": {
     "example": "example",
     "lib": "lib"
