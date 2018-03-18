@@ -18,5 +18,3 @@ node_modules
 # User specifc testing configs
 example/config/certificate
 
-# Test (Not Ready Yet)
-spec
