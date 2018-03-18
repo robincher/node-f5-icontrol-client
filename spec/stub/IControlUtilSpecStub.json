@@ -1,0 +1,43 @@
+{
+  "ListCollectionStubResponse" : {
+    "kind": "tm:net:bwc:policy:policycollectionstate",
+    "selfLink": "https://localhost:80",
+    "items": [
+      {
+        "kind": "tm:net:bwc:policy:policystate",
+        "name": "MOCK-NAME",
+        "partition": "Common",
+        "fullPath": "/Common/Project_1_bwlimit",
+        "generation": 113986,
+        "selfLink": "https://localhost:80",
+        "dynamic": "disabled",
+        "ipTos": "pass-through",
+        "linkQos": "pass-through",
+        "logPeriod": 2048,
+        "maxRate": 10000000,
+        "maxUserRate": 0,
+        "maxUserRatePps": 0,
+        "measure": "disabled",
+        "trafficPriorityMap": "->"
+      }
+    ]
+  },
+  "CollectionStubResponse" : {
+    "kind": "tm:net:bwc:policy:policystate",
+    "name": "per_user_limit_12m",
+    "partition": "Common",
+    "fullPath": "/Common/per_user_limit_12m",
+    "generation": 133742,
+    "selfLink": "https://localhost/mgmt/tm/net/bwc/policy/~Common~per_user_limit_12m?ver=13.1.0.2",
+    "description": "Test Bandwidh policy with 12m",
+    "dynamic": "disabled",
+    "ipTos": "pass-through",
+    "linkQos": "pass-through",
+    "logPeriod": 2048,
+    "maxRate": 12000000,
+    "maxUserRate": 0,
+    "maxUserRatePps": 0,
+    "measure": "disabled",
+    "trafficPriorityMap": "->"
+  }
+}
