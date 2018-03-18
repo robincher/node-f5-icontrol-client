@@ -75,8 +75,11 @@ npm run testCoverage
 
 ### License
 
+Release under [GNU GENERAL PUBLIC LICENSE](https://github.com/robincher/node-f5-icontrol-client/blob/master/LICENSE)
+
 ## References
 + [Node iControl Package](https://github.com/thwi/node-icontrol)
 + [F5 iControl REST API](https://devcentral.f5.com/d/icontrol-rest-user-guide)
++ [Code Coverage with Codeship CI](https://cdaringe.com/node-js-project-coverage-with-coveralls-io/)
 
 
