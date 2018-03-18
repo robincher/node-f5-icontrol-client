@@ -1,4 +1,3 @@
-'use strict';
 const sinon = require('sinon');
 const IControlUtil = require('../../lib/IControlUtil');
 const IControlUtilSpecStub = require('../stub/IControlUtilSpecStub.json');
