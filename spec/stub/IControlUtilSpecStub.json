@@ -39,5 +39,13 @@
     "maxUserRatePps": 0,
     "measure": "disabled",
     "trafficPriorityMap": "->"
+  },
+  "ErrorStubResponse" : {
+    "NoUpdateReqBodyRes": "iControl.update():Request Body is required",
+    "NoCreateReqBodyRes": "iControl.create():Request Body is required",
+    "NoUpdatePathRes": "iControl.update():API Path is required",
+    "NoCreatePathRes": "iControl.create():API Path is required",
+    "NoListPathRes" : "iControl.list():API Path is required",
+    "NoDeletePathRes" : "iControl.delete():API Path is required"
   }
 }
