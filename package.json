@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "main": "index.js",
+  "engineStrict" : true,
   "engines": {
-    "node": ">=8.0.0"
+    "node": "~8.0.0"
   },
   "directories": {
     "example": "example",
