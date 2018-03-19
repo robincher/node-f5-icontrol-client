@@ -46,6 +46,7 @@
     "NoUpdatePathRes": "iControl.update():API Path is required",
     "NoCreatePathRes": "iControl.create():API Path is required",
     "NoListPathRes" : "iControl.list():API Path is required",
-    "NoDeletePathRes" : "iControl.delete():API Path is required"
+    "NoDeletePathRes" : "iControl.delete():API Path is required",
+    "InvalidPathRes" : "iControl.sendRequest():Invalid URL Path provided"
   }
 }

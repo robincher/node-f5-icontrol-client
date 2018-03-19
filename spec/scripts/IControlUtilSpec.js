@@ -3,7 +3,7 @@ const sinon = require('sinon');
 const IControlUtil = require('../../lib/IControlUtil');
 const IControlUtilSpecStub = require('../stub/IControlUtilSpecStub.json');
 
-//Create base test IControl Instance for error
+//Create base test IControl Instance
 let IControlClient = new IControlUtil({
     host: '127.0.0.1',
     ca: 'Some Fake Contents',
@@ -17,6 +17,17 @@ let testBody = {
 }
 
 describe('iControl REST API Client Test Spec - Normal Cases',  () => {
+
+    describe('Initialization Normal Case',  () => {
+
+        it('iControl Client initialise', function () {
+            expect(IControlClient.list).to.be.ok;
+            expect(IControlClient.create).to.be.ok;
+            expect(IControlClient.update).to.be.ok;
+            expect(IControlClient.delete).to.be.ok;
+        });
+    });
+
     describe('List / Get  F5 iControl Collection',  () => {
         let listCollectionStub = sinon.stub(IControlClient, 'list');
         listCollectionStub.withArgs(testPath).resolves(IControlUtilSpecStub.ListCollectionStubResponse);
@@ -33,8 +44,6 @@ describe('iControl REST API Client Test Spec - Normal Cases',  () => {
         after(() => {
             listCollectionStub.restore();
         });
-
-
     });
 
     describe('Create a F5 iControl Collection',  () => {
@@ -98,8 +107,10 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
 
         it('Create F5 iControl Collection without a request body', (done) => {
             IControlClient.create(testPath, undefined).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoCreateReqBodyRes);
                 done();
             });
@@ -107,21 +118,74 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
 
         it('Update F5 iControl Collection without a request body', (done) => {
             IControlClient.update(testPath, undefined).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoUpdateReqBodyRes);
+                done();
+            });
+        });
+    });
+
+    describe('iControl REST API Client Test Spec - Error Cases : Invalid Path',  () => {
+        let errPath = 122212
+
+        it('Get F5 iControl Collection with invalid API path', (done) => {
+            IControlClient.list(errPath).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
+            }).catch((err) => {
+                expect(err).to.equal(err);
+                expect(err).to.be.an.instanceOf(TypeError);
+                expect(err.message).equal(IControlUtilSpecStub.ErrorStubResponse.InvalidPathRes);
+                done();
+            });
+        });
+
+        it('Create F5 iControl Collection with invalid API path', (done) => {
+            IControlClient.create(errPath,testBody).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
+            }).catch((err) => {
+                expect(err).to.equal(err);
+                expect(err).to.be.an.instanceOf(TypeError);
+                expect(err.message).equal(IControlUtilSpecStub.ErrorStubResponse.InvalidPathRes);
+                done();
+            });
+        });
+
+        it('Update F5 iControl Collection with invalid API path', (done) => {
+            IControlClient.update(errPath,testBody).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
+            }).catch((err) => {
+                expect(err).to.equal(err);
+                expect(err).to.be.an.instanceOf(TypeError);
+                expect(err.message).equal(IControlUtilSpecStub.ErrorStubResponse.InvalidPathRes);
+                done();
+            });
+        });
+
+        it('Delete F5 iControl Collection with invalid API path', (done) => {
+            IControlClient.delete(errPath).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
+            }).catch((err) => {
+                expect(err).to.equal(err);
+                expect(err).to.be.an.instanceOf(TypeError);
+                expect(err.message).equal(IControlUtilSpecStub.ErrorStubResponse.InvalidPathRes);
                 done();
             });
         });
 
     });
 
+
     describe('iControl REST API Client Test Spec - Error Cases : No API Path',  () => {
 
         it('Get F5 iControl Collection without a path', (done) => {
             IControlClient.list().then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoListPathRes);
                 done();
             });
@@ -129,8 +193,10 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
 
         it('Create F5 iControl Collection without a path', (done) => {
             IControlClient.create(undefined, testBody).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoCreatePathRes);
                 done();
             });
@@ -138,8 +204,10 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
 
         it('Update  F5 iControl Collection without a path', (done) => {
             IControlClient.update(undefined, testBody).then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoUpdatePathRes);
                 done();
             });
@@ -147,8 +215,10 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
 
         it('Delete F5 iControl Collection without a path', (done) => {
             IControlClient.delete().then((res) => {
+                fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
+                expect(err).to.equal(err);
                 expect(err.message).to.equal(IControlUtilSpecStub.ErrorStubResponse.NoDeletePathRes);
                 done();
             });
