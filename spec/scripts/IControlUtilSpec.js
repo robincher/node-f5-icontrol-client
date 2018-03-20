@@ -13,7 +13,7 @@ let IControlClient = new IControlUtil({
 
 let testPath = '/mgmt/tm/net/bwc/policy';
 let testBody = {
-    key : "value"
+    key : 'value'
 }
 
 describe('iControl REST API Client Test Spec - Normal Cases',  () => {
@@ -106,7 +106,7 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
     describe('iControl REST API Client Test Spec - Error Cases : No Request Body',  () => {
 
         it('Create F5 iControl Collection without a request body', (done) => {
-            IControlClient.create(testPath, undefined).then((res) => {
+            IControlClient.create(testPath).then((res) => {
                 fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
@@ -117,7 +117,7 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
         });
 
         it('Update F5 iControl Collection without a request body', (done) => {
-            IControlClient.update(testPath, undefined).then((res) => {
+            IControlClient.update(testPath).then((res) => {
                 fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
@@ -192,7 +192,7 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
         });
 
         it('Create F5 iControl Collection without a path', (done) => {
-            IControlClient.create(undefined, testBody).then((res) => {
+            IControlClient.create(null, testBody).then((res) => {
                 fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
@@ -203,7 +203,7 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
         });
 
         it('Update  F5 iControl Collection without a path', (done) => {
-            IControlClient.update(undefined, testBody).then((res) => {
+            IControlClient.update(null, testBody).then((res) => {
                 fail('Promise rejection expected, instead fulfilled');
                 expect(res).to.be.undefined;
             }).catch((err) => {
