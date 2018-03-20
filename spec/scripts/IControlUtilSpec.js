@@ -14,7 +14,7 @@ let IControlClient = new IControlUtil({
 let testPath = '/mgmt/tm/net/bwc/policy';
 let testBody = {
     key : 'value'
-}
+};
 
 describe('iControl REST API Client Test Spec - Normal Cases',  () => {
 
@@ -85,11 +85,11 @@ describe('iControl REST API Client Test Spec - Normal Cases',  () => {
 
     describe('Delete a F5 iControl Collection',  () => {
         let deleteCollectionStub = sinon.stub(IControlClient, 'delete');
-        deleteCollectionStub.withArgs(testPath).resolves(undefined);
+        deleteCollectionStub.withArgs(testPath).resolves(null);
 
         it('Update F5 iControl Collection Normal Case', (done) => {
             IControlClient.delete(testPath).then((res) => {
-                expect(res).to.be.undefined;
+                expect(res).to.be.null;
                 done();
             })
             .catch(done);
@@ -129,7 +129,7 @@ describe('iControl REST API Client Test Spec - Error Cases',  () => {
     });
 
     describe('iControl REST API Client Test Spec - Error Cases : Invalid Path',  () => {
-        let errPath = 122212
+        let errPath = 122212;
 
         it('Get F5 iControl Collection with invalid API path', (done) => {
             IControlClient.list(errPath).then((res) => {
