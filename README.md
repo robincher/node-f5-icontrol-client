@@ -1,5 +1,6 @@
 # Node.js library for F5 iControl API
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b5ded2e9f9d949a1a9718caf5e3038ea)](https://app.codacy.com/app/robincher/node-f5-icontrol-client?utm_source=github.com&utm_medium=referral&utm_content=robincher/node-f5-icontrol-client&utm_campaign=badger)
 [![Codeship Status for robincher/node-f5-icontrol-client](https://app.codeship.com/projects/4741fed0-0c23-0136-744c-56d424be27fe/status?branch=master)](https://app.codeship.com/projects/281946)
 [![Coverage Status](https://coveralls.io/repos/github/robincher/node-f5-icontrol-client/badge.svg?branch=master)](https://coveralls.io/github/robincher/node-f5-icontrol-client?branch=master)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
