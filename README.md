@@ -49,11 +49,10 @@ iControlClient.list('/mgmt/tm/net/bwc/policy').then(function(res)  {
 
 Refer to the examples shared within repository.
 
-Please ensure you have access to a test or development F5 Proxy.
+Please ensure you have access to a test or development F5 Proxy. You can specify your own testing environment
+A sample.json has been included to help you kick start the testing
 
-You can specify your own testing environment, and them reference it. A sample.json has been included to help you kick start the testing
-
-Running the file
+Running the example file
 
 ```
 cd example/
