@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const IControlUtil = require('../lib/IControlUtil');
 const config = require('./config/sample.json');
 const fs = require('fs');
@@ -15,5 +15,5 @@ iControlClient.list('/mgmt/tm/net/bwc/policy').then((res) => {
 })
 .catch((err) => {
     console.log(err);
-})
+});
 
