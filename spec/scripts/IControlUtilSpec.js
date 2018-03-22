@@ -20,12 +20,22 @@ describe('iControl REST API Client Test Spec - Normal Cases',  () => {
 
     describe('Initialization Normal Case',  () => {
 
-        it('iControl Client initialise', function () {
+        it('iControl Client initialise', () => {
             expect(IControlClient.list).to.be.ok;
             expect(IControlClient.create).to.be.ok;
             expect(IControlClient.update).to.be.ok;
             expect(IControlClient.delete).to.be.ok;
         });
+
+        it('iControl Client Default Values', () => {
+            expect(IControlClient.host).to.be.eql('127.0.0.1');
+            expect(IControlClient.proto).to.be.eql('https');
+            expect(IControlClient.port).to.be.eql(443);
+            expect(IControlClient.output).to.be.eql(true);
+        });
+
+
+
     });
 
     describe('List / Get  F5 iControl Collection',  () => {
