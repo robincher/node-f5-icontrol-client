@@ -1,7 +1,7 @@
 {
   "name": "node-icontrol-client",
   "description": "F5 iControl REST API client for Node.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "main": "index.js",
   "engineStrict": true,
