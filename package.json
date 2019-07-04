@@ -20,13 +20,16 @@
   "license": "GPL-3.0",
   "scripts": {
     "test": "BLUEBIRD_DEBUG=1 mocha --opts ./spec/support/mocha.opts $(find ./spec/ -name '*Spec.js')",
-    "testCoverage": "nyc --reporter=lcovonly npm test"
+    "testCoverage": "nyc --reporter=lcovonly npm test",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^3.5.5",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -35,5 +38,6 @@
     "mocha": "^6.1.4",
     "nyc": "^14.1.1",
     "sinon": "^7.3.2"
-  }
+  },
+  "snyk": true
 }
