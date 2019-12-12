@@ -29,7 +29,7 @@
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "lodash": "^4.17.13",
-    "snyk": "^1.230.5"
+    "snyk": "^1.258.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
