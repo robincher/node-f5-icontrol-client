@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.5",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "request-promise": "^4.2.4",
     "lodash": "^4.17.21",
     "snyk": "^1.685.0"
